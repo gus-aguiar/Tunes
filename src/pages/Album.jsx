@@ -15,7 +15,7 @@ class Album extends React.Component {
   async componentDidMount() {
     const { match } = this.props;
     const musics = await getMusics(match.params.id);
-    // console.log(musics);
+    console.log(musics);
     const { artistName, collectionName } = musics[0];
     const filterMusicas = musics.filter(({ trackId }) => trackId);
     // console.log(filterMusicas);
@@ -36,7 +36,16 @@ class Album extends React.Component {
         <Header />
         { isLoading
           ? <p>Carregando...</p>
-          : <MusicCard artist={ artist } album={ album } musics={ musics } />}
+          : (
+            musics.map((music) => (
+              <MusicCard
+                artist={ artist }
+                album={ album }
+                music={ music }
+                key={ music.trackId }
+              />
+
+            )))}
       </div>
     );
   }
