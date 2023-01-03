@@ -39,8 +39,6 @@ class Album extends React.Component {
         <p data-testid="album-name">{album}</p>
         { musics.map((music) => (
           <MusicCard
-            artist={ artist }
-            album={ album }
             music={ music }
             key={ music.trackId }
           />
