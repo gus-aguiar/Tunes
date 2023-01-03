@@ -30,22 +30,22 @@ class Album extends React.Component {
 
   render() {
     const { artist, album, musics, isLoading } = this.state;
+    if (isLoading) return <p>Carregando...</p>;
 
     return (
       <div data-testid="page-album">
         <Header />
-        { isLoading
-          ? <p>Carregando...</p>
-          : (
-            musics.map((music) => (
-              <MusicCard
-                artist={ artist }
-                album={ album }
-                music={ music }
-                key={ music.trackId }
-              />
+        <p data-testid="artist-name">{artist}</p>
+        <p data-testid="album-name">{album}</p>
+        { musics.map((music) => (
+          <MusicCard
+            artist={ artist }
+            album={ album }
+            music={ music }
+            key={ music.trackId }
+          />
 
-            )))}
+        ))}
       </div>
     );
   }

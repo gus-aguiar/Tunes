@@ -73,15 +73,13 @@ class MusicCard extends React.Component {
   };
 
   render() {
-    const { artist, album, music } = this.props;
+    const { music } = this.props;
     const { isLoading } = this.state;
     return (
       isLoading
         ? <p>Carregando...</p>
         : (
           <div>
-            <p data-testid="artist-name">{artist}</p>
-            <p data-testid="album-name">{album}</p>
             <div>
               {this.showmusic(music)}
             </div>
@@ -92,8 +90,7 @@ class MusicCard extends React.Component {
 }
 
 MusicCard.propTypes = {
-  album: PropTypes.string.isRequired,
-  artist: PropTypes.string.isRequired,
+
   music: PropTypes.arrayOf().isRequired,
 };
 
