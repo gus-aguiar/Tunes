@@ -14,11 +14,8 @@ class MusicCard extends React.Component {
 
   recoverFavorites = async () => {
     const favoriteSongs = await getFavoriteSongs();
-    console.log(favoriteSongs);
     const { music } = this.props;
     const { trackId } = music;
-    console.log(trackId);
-
     if (favoriteSongs.some((song) => song.trackId === trackId)) {
       this.setState({
         isChecked: true,

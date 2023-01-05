@@ -41,8 +41,12 @@ class Search extends React.Component {
   };
 
   showContent = (content) => content
-    .map(({ collectionName, artistName, collectionId }) => (
+    .map(({ collectionName, artistName, collectionId, artworkUrl100 }) => (
       <div key={ collectionId }>
+        <img
+          src={ artworkUrl100 }
+          alt={ collectionName }
+        />
         <p>{`Album: ${collectionName}`}</p>
         <p>{`ArtistName: ${artistName}`}</p>
         <Link

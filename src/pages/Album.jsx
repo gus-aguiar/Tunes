@@ -15,10 +15,8 @@ class Album extends React.Component {
   async componentDidMount() {
     const { match } = this.props;
     const musics = await getMusics(match.params.id);
-    console.log(musics);
     const { artistName, collectionName } = musics[0];
     const filterMusicas = musics.filter(({ trackId }) => trackId);
-    // console.log(filterMusicas);
     this.setState({
       artist: artistName,
       album: collectionName,
@@ -41,6 +39,7 @@ class Album extends React.Component {
           <MusicCard
             music={ music }
             key={ music.trackId }
+            buttonCheck={ () => {} }
           />
 
         ))}
