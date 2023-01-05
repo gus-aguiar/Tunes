@@ -10,11 +10,15 @@ class Favorites extends React.Component {
   };
 
   componentDidMount() {
+    this.handleClick();
+  }
+
+  handleClick = async () => {
     this.setState({ isLoading: true }, async () => {
       const favoriteSongs = await getFavoriteSongs();
       this.setState({ isLoading: false, favoriteSongs });
     });
-  }
+  };
 
   render() {
     const { isLoading, favoriteSongs } = this.state;
@@ -26,6 +30,7 @@ class Favorites extends React.Component {
           <MusicCard
             music={ music }
             key={ music.trackId }
+            buttonCheck={ this.handleClick }
           />
         ))}
       </div>

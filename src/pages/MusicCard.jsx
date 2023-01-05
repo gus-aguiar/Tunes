@@ -47,6 +47,7 @@ class MusicCard extends React.Component {
 
   showmusic = ({ trackId, trackName, previewUrl }) => {
     const { isChecked } = this.state;
+    const { buttonCheck } = this.props;
     return (
       <div key={ trackId }>
         <p>{ trackName }</p>
@@ -60,6 +61,7 @@ class MusicCard extends React.Component {
             data-testid={ `checkbox-music-${trackId}` }
             onChange={ this.handleChange }
             checked={ isChecked }
+            onClick={ buttonCheck }
           />
           Favorita
 
@@ -90,8 +92,10 @@ class MusicCard extends React.Component {
 }
 
 MusicCard.propTypes = {
-
-  music: PropTypes.arrayOf().isRequired,
+  buttonCheck: PropTypes.func.isRequired,
+  music: PropTypes.shape({
+    trackId: PropTypes.string,
+  }).isRequired,
 };
 
 export default MusicCard;
