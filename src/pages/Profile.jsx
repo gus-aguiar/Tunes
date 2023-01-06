@@ -13,27 +13,31 @@ class Profile extends React.Component {
   }
 
   getUserInfo = async () => {
-    this.setState(async () => {
+    this.setState({ isLoading: true }, async () => {
       const xablau = await getUser();
-      this.setState({ userInfo: xablau });
+      this.setState({ isLoading: false, userInfo: xablau });
     });
   };
 
   render() {
-    const { userInfo: { name, email, image, description } } = this.state;
+    const { userInfo: { name, email, image, description }, isLoading } = this.state;
 
     return (
       <div data-testid="page-profile">
         <Header />
-        <p>{name}</p>
-        <p>{email}</p>
-        <img data-testid="profile-image" src={ image } alt="imagem do usuário" />
-        <p>{description}</p>
-        <button type="button">
-          {' '}
-          <Link to="/profile/edit"> Editar perfil </Link>
-          {' '}
-        </button>
+        { isLoading ? <p>Carregando...</p>
+          : (
+            <div>
+              <p>{name}</p>
+              <p>{email}</p>
+              <img data-testid="profile-image" src={ image } alt="imagem do usuário" />
+              <p>{description}</p>
+              <button type="button">
+                {' '}
+                <Link to="/profile/edit"> Editar perfil </Link>
+                {' '}
+              </button>
+            </div>)}
       </div>
     );
   }
