@@ -1,6 +1,7 @@
 import React from 'react';
 import { shape, func } from 'prop-types';
 import { createUser } from '../services/userAPI';
+import styles from '../assets/styles/Login.module.css';
 
 class Login extends React.Component {
   state = {
@@ -33,20 +34,27 @@ class Login extends React.Component {
     return isLoading ? (
       <p>Carregando...</p>
     ) : (
-      <div data-testid="page-login">
-        <input
-          data-testid="login-name-input"
-          type="text"
-          onChange={ this.handleChange }
-        />
-        <button
-          data-testid="login-submit-button"
-          type="submit"
-          disabled={ isDisabled }
-          onClick={ this.handleClick }
-        >
-          Entrar
-        </button>
+      <div data-testid="page-login" className={ styles.loginContainer }>
+        <div className={ styles.box }>
+          <p className={ styles.trybe }>Trybe</p>
+          <p className={ styles.tunes }>Tunes</p>
+
+          <input
+            data-testid="login-name-input"
+            type="text"
+            onChange={ this.handleChange }
+            className={ styles.input }
+          />
+          <button
+            data-testid="login-submit-button"
+            type="submit"
+            disabled={ isDisabled }
+            onClick={ this.handleClick }
+            className={ styles.button }
+          >
+            Entrar
+          </button>
+        </div>
       </div>
     );
   }
