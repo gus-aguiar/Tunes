@@ -38,13 +38,14 @@ class Login extends React.Component {
         <div className={ styles.box }>
           <p className={ styles.trybe }>Trybe</p>
           <p className={ styles.tunes }>Tunes</p>
-
-          <input
-            data-testid="login-name-input"
-            type="text"
-            onChange={ this.handleChange }
-            className={ styles.input }
-          />
+          <div className={ styles.inputGroup }>
+            <input
+              data-testid="login-name-input"
+              type="text"
+              onChange={ this.handleChange }
+              className={ styles.input }
+            />
+          </div>
           <button
             data-testid="login-submit-button"
             type="submit"

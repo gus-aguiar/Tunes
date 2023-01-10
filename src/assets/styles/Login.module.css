@@ -44,18 +44,64 @@
 .input {
   border: 2px solid #284b63;
   border-radius: 30px;
-  height: 10%;
+  height: 50px;
   margin-top: 2%;
 }
 
 .button {
   background-color: #284b63;
-  border: 2px solid #284b63;
-  border-radius: 30px;
-  color: #d9d9d9;
-  height: 10%;
-  margin-top: 2%;
-  width: 20%;
+  border: 1px solid #353535;
+  border-radius: 5px;
+  box-shadow: 0 6px 0 black;
+  color: white;
+  font-size: 17px;
+  margin-top: 5px;
+  padding: 10px;
+  transition: all 0.1s;
+}
 
-  /* padding: 2%; */
+.button:active {
+  box-shadow: 0 2px 0 white;
+  position: relative;
+  top: 2px;
+}
+
+.inputGroup {
+  font-family: Segoe UI , sans-serif;
+  margin: 1em 0;
+  max-width: 190px;
+  position: relative;
+}
+
+.inputGroup input {
+  background-color: transparent;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 20px;
+  font-size: 100%;
+  outline: none;
+  padding: 0.8em;
+  width: 100%;
+}
+
+.inputGroup label {
+  color: rgb(100, 100, 100);
+  font-size: 100%;
+  left: 0;
+  margin-left: 0.5em;
+  padding: 0.8em;
+  pointer-events: none;
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+.inputGroup :is( input:focus, input:valid ) ~ label {
+  background-color: white;
+  margin: 0;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  transform: translateY(-50%) scale(0.9);
+}
+
+.inputGroup :is( input:focus, input:valid ) {
+  border-color: #284b63;
 }
