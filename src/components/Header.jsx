@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import styles from '../assets/styles/Header.module.css';
 
 class Header extends React.Component {
   state = {
@@ -22,20 +23,22 @@ class Header extends React.Component {
     const { name, isLoading } = this.state;
 
     return (
-      <header data-testid="header-component">
-        {isLoading ? (
-          <p>Carregando...</p>
-        ) : (
-          <p data-testid="header-user-name">{name}</p>
-        )}
-        <nav>
-          <Link to="/search" data-testid="link-to-search">
-            Busca
-          </Link>
-          <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
-          <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
-        </nav>
-      </header>
+      <div className={ styles.navbar }>
+        <header data-testid="header-component">
+          {isLoading ? (
+            <p>Carregando...</p>
+          ) : (
+            <p data-testid="header-user-name">{name}</p>
+          )}
+          <nav className={ styles.links }>
+            <Link to="/search" data-testid="link-to-search">
+              Busca
+            </Link>
+            <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
+            <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+          </nav>
+        </header>
+      </div>
     );
   }
 }

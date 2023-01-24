@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import styles from '../assets/styles/Search.module.css';
 
 class Search extends React.Component {
   state = {
@@ -61,8 +62,10 @@ class Search extends React.Component {
   render() {
     const { isLoading, isDisabled, searchValue, artist, albums, errorMusic } = this.state;
     return (
-      <div data-testid="page-search">
-        <Header />
+      <div data-testid="page-search" className={ styles.pageSearch }>
+        <div className={ styles.navBar }>
+          <Header />
+        </div>
         {' '}
         {!errorMusic
           ? <div />
@@ -81,7 +84,7 @@ class Search extends React.Component {
         {isLoading
           ? <p>Carregando...</p>
           : (
-            <div>
+            <div className={ styles.search }>
               <input
                 data-testid="search-artist-input"
                 type="text"
