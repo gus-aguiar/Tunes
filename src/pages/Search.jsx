@@ -43,7 +43,7 @@ class Search extends React.Component {
 
   showContent = (content) => content
     .map(({ collectionName, artistName, collectionId, artworkUrl100 }) => (
-      <div key={ collectionId }>
+      <div key={ collectionId } className={ styles.cardiv }>
         <img
           src={ artworkUrl100 }
           alt={ collectionName }

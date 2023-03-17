@@ -25,3 +25,14 @@
   justify-content: center;
   width: 100%;
 }
+
+.cardiv {
+  align-items: center;
+  background-color: blueviolet;
+  border: 30px;
+  border-color: black;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  padding: 10%;
+}
