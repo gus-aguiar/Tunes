@@ -1,6 +1,6 @@
-# TrybeTunes - Sua Plataforma de Música 🎵🎧
+# Tunes - Sua Plataforma de Música 🎵🎧
 
-O TrybeTunes é uma aplicação que permite reproduzir músicas de diversos artistas e bandas, além de oferecer recursos como criação de lista de músicas favoritas e edição do perfil do usuário logado. Com o TrybeTunes, você poderá desfrutar da melhor experiência musical!
+O Tunes é uma aplicação que permite reproduzir músicas de diversos artistas e bandas, além de oferecer recursos como criação de lista de músicas favoritas e edição do perfil do usuário logado. Com o Tunes, você poderá desfrutar da melhor experiência musical!
 
 ## Principais Funcionalidades
 
@@ -18,7 +18,7 @@ Durante o desenvolvimento deste projeto, foram implementadas as seguintes funcio
 
 ## Desenvolvimento
 
-O projeto TrybeTunes foi desenvolvido por mim, utilizando as mais modernas tecnologias e boas práticas de programação. Foram empregadas as seguintes habilidades e ferramentas:
+O projeto Tunes foi desenvolvido por mim, utilizando as mais modernas tecnologias e boas práticas de programação. Foram empregadas as seguintes habilidades e ferramentas:
 
 - React: Biblioteca JavaScript para a construção da interface do usuário.
 - Redux: Gerenciamento de estado da aplicação.
@@ -27,6 +27,6 @@ O projeto TrybeTunes foi desenvolvido por mim, utilizando as mais modernas tecno
 
 ## Aproveite a Música!
 
-Espero que você aproveite ao máximo o TrybeTunes e tenha uma experiência musical incrível. Sinta-se à vontade para explorar as funcionalidades, favoritar suas músicas preferidas e personalizar seu perfil. A música é capaz de nos transportar para lugares mágicos, e o TrybeTunes está aqui para fazer parte dessa jornada!
+Espero que você aproveite ao máximo o Tunes e tenha uma experiência musical incrível. Sinta-se à vontade para explorar as funcionalidades, favoritar suas músicas preferidas e personalizar seu perfil. A música é capaz de nos transportar para lugares mágicos, e o Tunes está aqui para fazer parte dessa jornada!
 
 Divirta-se e aproveite a música! 🎶🎧
